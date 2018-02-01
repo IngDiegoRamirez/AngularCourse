@@ -1,9 +1,14 @@
-function saludar( nombre:string ) {
-  console.log("Hola " + nombre);
+function activar(quien:string,
+                objeto:string="sensor",
+              momento?:string){
+  let mensaje:string;
+  if(momento){
+    mensaje =`${quien} activó el ${objeto} en la ${momento}`;
+  }else{
+    mensaje =`${quien} activó el ${objeto}`;
+  }
+
+  console.log(mensaje);
 }
 
-var wolverine={
-  nombre:"Logan"
-};
-
-saludar(wolverine.nombre.toUpperCase());
+activar("Diego", "auto");
