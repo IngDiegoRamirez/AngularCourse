@@ -1,14 +1,17 @@
-function activar(quien:string,
-                objeto:string="sensor",
-              momento?:string){
-  let mensaje:string;
-  if(momento){
-    mensaje =`${quien} activó el ${objeto} en la ${momento}`;
-  }else{
-    mensaje =`${quien} activó el ${objeto}`;
+let prom = new Promise(function(resolve, reject){
+  setTimeout( ()=>{
+    console.log("Procesado");
+
+    //resolve();
+
+    reject();
+  }, 1500)
+})
+
+prom.then(function(){
+  console.log("Termino bien !!");
+},
+  function(){
+    console.log("Termino mal !!");
   }
-
-  console.log(mensaje);
-}
-
-activar("Diego", "auto");
+)
